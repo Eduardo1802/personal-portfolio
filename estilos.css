@@ -188,3 +188,83 @@ body{
     left: 50%;
     transform: translateX(-50%);
 } 
+
+
+/* seccion SOBRE-MI ------------------------------------------------------------------------------------------------ */
+.sobre-mi{
+    background:linear-gradient(to right, #000c76, #007be5);
+    padding: 60px 0;
+    position: relative;
+    top: -100px;
+}
+.sobre-mi .contenedor-habi{
+    max-width: 1100px;
+    margin: auto;
+}
+.sobre-mi h3{
+    margin-bottom: 20px;
+}
+.sobre-mi .card p{
+    color: #8d8d8d;
+    line-height: 28px;
+    font-size: 12px;
+}
+.sobre-mi .meet h4{
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+.sobre-mi .title h2{
+    text-align: center;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.sobre-mi .fila{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.sobre-mi .fila .col{
+    text-align: center;
+    width: 30%;
+}
+.sobre-mi .fila .col .card{
+    border: 1px solid #8d8d8d;
+    height: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+}
+.sobre-mi .icono{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.sobre-mi .icono .circulo{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+}
+.sobre-mi .card a{
+    text-decoration: none;
+    color: #008cff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
