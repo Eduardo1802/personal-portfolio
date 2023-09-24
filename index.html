@@ -411,13 +411,13 @@
                     </div>
                 </div>
                 <div class="col">
-                    <form method="post" onsubmit="validarFormulario()">
+                    <form method="post">
                         <input type="text" id="sendername" placeholder="Nombre...">
-                        <input type="email" id="to" placeholder="Correo...">
+                        <input type="email" id="reply_to" placeholder="Correo..." pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+                        <input type="text" id="to" value="20200744@uthh.edu.mx" hidden>
                         <input type="text" id="subject" placeholder="Tema">
-                        <input type="text" id="reply_to" value="20200744@uthh.edu.mx" hidden>
                         <textarea id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                        <input type="submit" value="Enviar" class="btn">
+                        <input type="button" value="Enviar" class="btn" onclick="validarFormulario()">
                     </form>
                 </div>
             </div>
@@ -436,6 +436,8 @@
         </div> -->
         <p>Tomado el diseño de Código Web - 2023 - Aprende Creando</p>
     </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="./app.js"></script>
 </body>
 

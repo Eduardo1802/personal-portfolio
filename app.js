@@ -179,10 +179,13 @@ function validarFormulario() {
         alert("Por favor, complete todos los campos.");
         return false;
     }
-    // alert(sendername+" "+to+" "+subject+" "+reply_to+" "+message); 
-    (function(){
-        emailjs.init("YjClD8Hw7PJ0I06WZ");
-    })();
+    
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!emailRegex.test(reply_to)) {
+        alert("Por favor, ingrese una dirección de correo electrónico válida.");
+        return false;
+    }
 
     var params = {
         sendername: sendername,
@@ -192,18 +195,23 @@ function validarFormulario() {
         message: message,
     };
 
-    var serviceID = "service_p48rtwz";
-    var templateID = "template_3g9d5n6";
+    emailjs.send("service_p48rtwz", "template_3g9d5n6", params , "YjClD8Hw7PJ0I06WZ") 
+        .then(function(response) {
+            console.log("Correo enviado con éxito:", response);
 
-    emailjs.send(serviceID,templateID,params)
-    .then( res =>{
-        alert("Correo enviado con éxito. ", res);
-        document.getElementById("sendername").value = "";
-        document.getElementById("to").value = "";
-        document.getElementById("subject").value = "";
-        document.getElementById("message").value = "";
-    })
-    .catch();
+            document.getElementById("sendername").value = "";
+            document.getElementById("reply_to").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+
+            alert("Correo enviado con éxito. El formulario ha sido limpiado.");
+
+        }, function(error) {
+            console.error("Error al enviar el correo:", error);
+            alert("Hubo un error al enviar el correo. Por favor, inténtalo de nuevo más tarde.");
+        });
+
+    return false;
 }
 
 
