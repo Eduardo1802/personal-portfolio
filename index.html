@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"
+        integrity="sha512-DHNepbIus9t4e6YoMBSJLwl+nnm0tIwMBonsQQ+W9NKN6gVVVbomJs9Ii3mQ+HzGZiU5FyJLdnAz9a63ZgZvTQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,7 +29,7 @@
                         <i class="fa-brands fa-codepen"></i>
                         <h1>Eduardo Azuara</h1>
                     </div>
-                    <nav id="nav">
+                    <nav id="nav" class="nav">
                         <a href="#inicio">INICIO</a>
                         <a href="#sobre-mi">SOBRE MI</a>
                         <a href="#proyectos">PROYECTOS</a>
@@ -32,7 +38,7 @@
                     </nav>
 
                     <!-- Icono del menu responsive -->
-                    <div id="icono-nav">
+                    <div id="icono-nav" onclick="responsiveMenu()">
                         <i class="fa-solid fa-bars"></i>
                     </div>
 
@@ -50,7 +56,7 @@
                         <h2>Técnico en TI</h2>
                         <p>En la actualidad estoy estudiando el decimo cuatrimestre en la carrera de ingeniería en
                             desarrollo y gestión de software.</p>
-                        <button class="btn btn-1">Descargar CV</button>
+                        <button class="btn btn-1" id="descargarBtn">Descargar CV</button>
                     </div>
                     <div class="col">
                         <div class="contenedor-img">
@@ -204,7 +210,7 @@
                 <h4>Soy Técnico Superior Universitario en Tecnologías de la Información y siento una pasión profunda por
                     la programación de algoritmos, sitios web y aplicaciones móviles. Actualmente, estoy colaborando con
                     la empresa Andonix con el objetivo de adquirir experiencia en el ámbito laboral y enriquecer mis
-                    habilidades personales. <br/>
+                    habilidades personales. <br />
                     Me entusiasma la oportunidad de aprender sobre las nuevas tecnologías, especialmente la inteligencia
                     artificial, que está experimentando un crecimiento significativo en la actualidad. Además de mi
                     interés profesional, disfruto de actividades personales como hacer ejercicio, salir con amigos y
@@ -257,6 +263,61 @@
             </div>
         </div>
     </section>
+
+    <!-- Sección proyectos -->
+    <section class="proyectos" id="proyectos">
+        <h2>Mis proyectos</h2>
+        <nav>
+            <a href="javascript:void(0)" class="borde" id="item" onclick="verCategoria('item')">Todos</a>
+            <a href="javascript:void(0)" class="" id="disenio" onclick="verCategoria('disenio')">Web</a>
+            <a href="javascript:void(0)" class="" id="programacion" onclick="verCategoria('programacion')">Python</a>
+        </nav>
+
+        <div class="galeria">
+            <div class="item disenio">
+                <img src="./img/corazon-huasteco.PNG" alt="">
+                <div class="info">
+                    <h3>Corazón Huasteco</h3>
+                    <span>React JS</span><span>Material Design</span><span>Java Script</span><span>Python</span>
+                    <a href="https://corazon-huasteco.com/" target="_blank">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="item disenio">
+                <img src="./img/fashion-fusion.PNG" alt="">
+                <div class="info">
+                    <h3>Fashion Fusion</h3>
+                    <span>React JS</span><span>Material Design</span><span>Java Script</span>
+                    <a href="https://fashion-fusion-65eb8.web.app/" target="_blank">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="item disenio">
+                <img src="./img/portafolio.PNG" alt="">
+                <div class="info">
+                    <h3>Portafolio</h3>
+                    <span>HTML</span><span>CSS</span><span>Java Script</span>
+                    <a href="https://personal-portfolio-seven-weld.vercel.app/" target="_blank">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="item programacion">
+                <img src="./img/bot.png" alt="">
+                <div class="info">
+                    <h3>Bot</h3>
+                    <span>Python</span><span>Streamlit</span>
+                    <a href="#proyectos">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="item programacion">
+                <img src="./img/chatbot.PNG" alt="">
+                <div class="info">
+                    <h3>Chat Bot</h3>
+                    <span>Python</span><span>OpenAI</span><span>React Js</span>
+                    <a href="#proyectos">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
 </body>
 
 </html>
