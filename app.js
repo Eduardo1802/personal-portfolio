@@ -167,7 +167,44 @@ botonDescargar.addEventListener("click", function() {
     enlaceDescarga.click();
 });
 
+// Formulario de la sección de contacto
+function validarFormulario() {
+    var sendername = document.getElementById("sendername").value;
+    var to = document.getElementById("to").value;
+    var subject = document.getElementById("subject").value;
+    var reply_to = document.getElementById("reply_to").value;
+    var message = document.getElementById("message").value;
 
+    if (sendername === "" || to === "" || subject === "" || reply_to === "" || message === "") {
+        alert("Por favor, complete todos los campos.");
+        return false;
+    }
+    // alert(sendername+" "+to+" "+subject+" "+reply_to+" "+message); 
+    (function(){
+        emailjs.init("YjClD8Hw7PJ0I06WZ");
+    })();
+
+    var params = {
+        sendername: sendername,
+        to: to,
+        subject: subject,
+        reply_to: reply_to,
+        message: message,
+    };
+
+    var serviceID = "service_p48rtwz";
+    var templateID = "template_3g9d5n6";
+
+    emailjs.send(serviceID,templateID,params)
+    .then( res =>{
+        alert("Correo enviado con éxito. ", res);
+        document.getElementById("sendername").value = "";
+        document.getElementById("to").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+    })
+    .catch();
+}
 
 
 
