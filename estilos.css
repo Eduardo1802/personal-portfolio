@@ -197,7 +197,7 @@ body{
     background:linear-gradient(to right, #000c76, #007be5);
     padding: 60px 0;
     position: relative;
-    top: -100px;
+    top: 10px;
 }
 .sobre-mi .contenedor-habi{
     max-width: 1100px;
@@ -278,6 +278,7 @@ body{
     padding: 0 20px;
 }
 .proyectos h2{
+    margin-top: 100px;
     text-align: center;
     margin-bottom: 20px;
 }
